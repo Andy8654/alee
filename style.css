@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:black;
+    color:white;
+}
+
+.universe{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    background:radial-gradient(circle,#101535,#000);
+}
+
+.intro{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+}
+
+.intro h1{
+    font-size:clamp(1.5rem,4vw,3rem);
+    margin-bottom:20px;
+    line-height:1.4;
+}
+
+.intro button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.star{
+    position:absolute;
+    width:14px;
+    height:14px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 20px white;
+
+    cursor:pointer;
+
+    opacity:0;
+    transform:scale(0);
+
+    transition:.4s;
+
+    animation:twinkle 2s infinite alternate;
+}
+
+.star.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+.final{
+    width:18px;
+    height:18px;
+}
+
+.message{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.box{
+    max-width:650px;
+    text-align:center;
+    line-height:1.8;
+    font-size:clamp(1rem,2vw,1.3rem);
+}
+
+.close{
+    margin-top:20px;
+    cursor:pointer;
+}
+
+@keyframes twinkle{
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.4);
+    }
+}
